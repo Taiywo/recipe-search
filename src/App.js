@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css"
+import RecipeCard from "./component/RecipeCard"
+import React, { useState, useEffect } from 'react';
+import SearchBar from './component/SearchBar';
+
+
+
 
 function App() {
+
+  const [searchQuery, setSearchQuery] = useState('');
+  const [recipes, setRecipes] = useState([]);
+  const getRecipes = async () => {
+    const response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=bean`)
+    const data = await response.json()
+    setRecipes(data.meals)
+    console.log(recipes)
+  }
+  useEffect(() => {
+    getRecipes()
+  }, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <SearchBar />
+      <div className="recipe-container">
+        {recipes.map(meals => <RecipeCard
+          key={meals.idMeal}
+          recipee={meals} />)}
+      </div>
     </div>
   );
 }
