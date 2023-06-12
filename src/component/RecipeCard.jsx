@@ -1,7 +1,7 @@
 import React from 'react'
 import "../App.css"
 import styled from "styled-components";
-import BasicModa from "../Modal"
+import BasicModa from "./Modal"
 
 
 const RecipeImg = styled.img`
@@ -16,7 +16,7 @@ function RecipeCard({ recipee }) {
   const { idMeal,
     strMeal,
     strCategory,
-    strMealThumb, strArea, strSource } = recipee
+    strMealThumb, strArea, strSource, } = recipee
 
   return (
     <div key={idMeal} className='recipe-card'>

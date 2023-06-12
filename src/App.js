@@ -2,7 +2,7 @@ import "./App.css"
 import RecipeCard from "./component/RecipeCard"
 import React, { useState, useEffect } from 'react';
 import SearchBar from './component/SearchBar';
-
+import BasicModa from './component/Modal'
 
 
 
@@ -26,8 +26,11 @@ function App() {
       <div className="recipe-container">
         {recipes.map(meals => <RecipeCard
           key={meals.idMeal}
-          recipee={meals} />)}
+          recipee={meals}>
+            
+          </RecipeCard >)}
       </div>
+      
     </div>
   );
 }
