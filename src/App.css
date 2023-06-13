@@ -51,9 +51,9 @@
 .recipe-card{
    display: flex;
    flex-direction: column;
-   justify-content: center;
    margin: 0 auto;
-   height: 35rem;
+   padding-top: .5rem;
+   height: 30rem;
    width: 21rem;
    border-radius: 1rem;
    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
