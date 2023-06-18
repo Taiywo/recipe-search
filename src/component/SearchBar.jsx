@@ -1,63 +1,45 @@
 import React from 'react'
-import styled from "styled-components";
 import Logo from "./iconpng.png"
-import BgImg from "./bg-img.png"
-import Search from "./search.png"
-import "../App.css"
+
+import "../App"
 
 
-const Navbar = styled.div`display: flex;
-background-color: #8CA0D7;
-height:4rem;
-justify-content:center;
-align-items:center;
-box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-`;
-const CoverImage = styled.img`
-  height: 30px;
-`;
-const BackImage = styled.div`height:20rem;
-    background-image: url(${BgImg});
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;`
-
-const SearchContainer = styled.div`
-  height:10rem;
-  width:50%;
-  background-color:#8CA0D7;
-  border:4px solid white;
-  border-radius:1rem;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-around;
-  align-items:center;
-position:absolute;
-top:18rem
-`
-
-function SearchBar() {
+function SearchBar({
+  handleSubmit,
+  query,
+  setQuery
+}) {
   return (
-    < div className="header-container">
-      <Navbar>
-        <CoverImage src={Logo} alt='' />
-        <h1 className='logo-name'>RENO <span className='logo-name2'>RECIPE</span></h1>
-      </Navbar>
-      <BackImage />
-      <div className='contain'>
-        <SearchContainer>
-          <h1 className='search-title'>
-            what would you like to cook?
-          </h1>
-          <div>
-            <input type="text" name="" id="" className='input' />
-            <img src={Search} alt="" srcset="" className='search-icon'/>
-          </div>
-        </SearchContainer>
+    < div>
+      <header className='flex bg-blue-300  h-20 justify-center items-center shadow-lg'>
+        <img src={Logo} alt='' />
+        <h1 className='text-3xl font-serif'>CODENT<span className='text-white'> - RECIPE</span></h1>
+      </header >
+      <img className='bg-bgImage h-40 w-screen bg-cover bg-no-repeat bg-center ' />
+      <div className='flex justify-center '>
+        <div className='h-24 w-[50rem] bg-blue-300  rounded-2xl border-white border-2 flex flex-col justify-around
+         items-center absolute top-48 '>
+          <form onSubmit={handleSubmit}>
+            <input
+              value={query}
+              className='rounded-l-xl'
+              placeholder="Search Recipe"
+              name="query"
+              onChange={(event) => setQuery(event.target.value)}
+            />
+            <input
+              type="submit"
+              className="brounded-r-xl"
+              value="Search"
+            />
+          </form>
+
+        </div >
       </div>
-
-
     </div>
+
+
+
 
 
   )
