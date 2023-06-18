@@ -1,14 +1,17 @@
 import { useState } from 'react';
-import '../App'
 
-function Modals({ strMeal, strCategory, strInstructions, containerImg, strMealThumb, recipeImg, strYoutube }) {
+function Modals({ strMeal, strInstructions, strMealThumb, strYoutube }) {
 
+
+  // State to track if the modal is open or closed
   const [isOpen, setIsOpen] = useState(false);
 
+  // Function to open the modal
   const openModal = () => {
     setIsOpen(true)
   }
 
+  // Function to close the modal
   const closeModal = () => {
     setIsOpen(false)
   }
@@ -16,16 +19,17 @@ function Modals({ strMeal, strCategory, strInstructions, containerImg, strMealTh
   return (
     <div>
       <div>
-        <button onClick={openModal} className='font-sans font-semibold  h-8 w-full text-gray-600 bg-blue-300 border-none rounded-md' >View Instructions</button>
+        {/* Button to open the modal */}
+        <button onClick={openModal} className='h-10 w-full text-white bg-secondary border-none rounded-md' >View Instructions</button>
       </div>
+      {/* Modal content */}
       {isOpen && (
         <div className="fixed top-0 left-0 right-0 bottom-0 bg-black bg-opacity-50 flex
          items-center justify-center text-center overflow-auto pt-40">
           <div className="bg-white p-10 rounded-lg max-w-[40rem]">
-            <h2 className="font-bold text-2xl pb-3">{strMeal}</h2>
-       
+            <h2 className="font-bold text-2xl  pb-3">{strMeal}</h2>
             <div className="">
-              <h3 className='text-xl pb-2 text-sky-500'>Instructions:</h3>
+              <h3 className='text-xl pb-2 text-secondary'>Instructions:</h3>
               <p className='sm:text-xs xl:text-lg text-justify'>{strInstructions}</p>
             </div>
             <div className='m-auto pt-[1rem] pb-[1rem] w-[6rem]'>
@@ -36,7 +40,8 @@ function Modals({ strMeal, strCategory, strInstructions, containerImg, strMealTh
                 className='text-l underline'>Watch Video</a>
             </div>
             <div className='flex justify-center'>
-              <button onClick={closeModal} className='h-8 w-80 bg-blue-300 border-none font-serif  rounded-md'>Close</button>
+              {/* Button to close the modal */}
+              <button onClick={closeModal} className='h-10 w-40 bg-secondary text-white border-none font-serif  rounded-md'>Close</button>
             </div>
 
           </div>

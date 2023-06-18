@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         'bgImage': "url('/src/component/bg-img.png')",
+        'errorImage': "url('/src/component/error-img.png')"
         
       },
       screens: {
@@ -16,6 +17,14 @@ module.exports = {
         'md': '768px',
         'lg': '1024px',
         'xl': '1280px',
+      },
+      colors: {
+        'primary':  '#8D3F8D',
+        'secondary':  '#A060A0',
+      },
+      fontFamily: {
+        sans: ['Graphik', 'sans-serif'],
+        serif: ['Merriweather', 'serif'],
       },
     },
   },
