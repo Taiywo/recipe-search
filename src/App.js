@@ -47,10 +47,10 @@ function App() {
       <SearchBar handleSubmit={handleSubmit}
         query={searchQuery}
         setQuery={setSearchQuery} />
-      <div className="grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 mx-auto my-0 pt-32">
+      <div className="flex flex-wrap gap-2 justify-evenly mx-auto my-0 pt-32 p-10">
          {/* Conditional rendering based on recipes state */}
         {!recipes ? (<div className="flex flex-col items-center"><img src={errorImg} alt="" className="w-[20rem]" />
-          <h1 className="text-3xl font-bold">Recipie Not Found{error}</h1></div>)
+          <h1 className="text-3xl font-bold">Recipie Not Found</h1>{error}</div>)
           : (recipes.map(meals => 
            // Recipe card component
           <RecipeCard
