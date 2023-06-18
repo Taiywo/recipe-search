@@ -47,7 +47,7 @@ function App() {
       <SearchBar handleSubmit={handleSubmit}
         query={searchQuery}
         setQuery={setSearchQuery} />
-      <div className="flex flex-wrap gap-2 justify-evenly mx-auto my-0 pt-32 p-10">
+      <div className="flex flex-wrap gap-[2rem] gap-y-20 justify-evenly mx-auto my-0 pt-32 p-10">
          {/* Conditional rendering based on recipes state */}
         {!recipes ? (<div className="flex flex-col items-center"><img src={errorImg} alt="" className="w-[20rem]" />
           <h1 className="text-3xl font-bold">Recipie Not Found</h1>{error}</div>)
