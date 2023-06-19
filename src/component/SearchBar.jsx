@@ -17,7 +17,7 @@ function SearchBar({
       </header >
       <img className='bg-bgImage h-40 w-screen bg-cover bg-no-repeat bg-center'/>
       <div className='flex justify-center '>
-        <div className='h-40 w-[30rem] bg-primary  rounded-2xl border-white border-2 flex flex-col justify-around
+        <div className='h-40 w-[20rem] bg-primary  rounded-2xl border-white border-2 flex flex-col justify-around
          items-center absolute top-32 '>
           <form onSubmit={handleSubmit}>
             <input
