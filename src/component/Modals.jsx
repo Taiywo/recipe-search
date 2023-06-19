@@ -24,7 +24,7 @@ function Modals({ strMeal, strInstructions, strMealThumb, strYoutube }) {
       </div>
       {/* Modal content */}
       {isOpen && (
-        <div className="fixed top-0 left-0 right-0 bottom-0 bg-black bg-opacity-50 flex
+        <div className="fixed top-[2rem] left-0 right-0 bottom-0 bg-black bg-opacity-50 flex
          items-center justify-center text-center overflow-auto pt-40">
           <div className="bg-white p-10 rounded-lg max-w-[40rem]">
             <h2 className="font-bold text-2xl  pb-3">{strMeal}</h2>
