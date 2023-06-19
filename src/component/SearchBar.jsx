@@ -22,7 +22,7 @@ function SearchBar({
           <form onSubmit={handleSubmit}>
             <input
               value={query}
-              className='rounded-l-xl  p-3 m-[1rem]'
+              className='rounded-l-xl  p-3 ml-[1rem] mr-[1rem]'
               placeholder="Search Recipe"
               name="query"
               onChange={(event) => setQuery(event.target.value)}
