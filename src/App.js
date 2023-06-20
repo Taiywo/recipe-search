@@ -34,7 +34,7 @@ function App() {
   // Fetch recipes on component mount
   useEffect(() => {
     getRecipes()
-  }, [])
+  }, [searchQuery])
 
 
 // Function to handle form submission
@@ -50,7 +50,7 @@ function App() {
       <div className="flex flex-wrap gap-[2rem] gap-y-20 justify-evenly mx-auto my-0 pt-32 p-10">
          {/* Conditional rendering based on recipes state */}
         {!recipes ? (<div className="flex flex-col items-center"><img src={errorImg} alt="" className="w-[20rem]" />
-          <h1 className="text-3xl font-bold">Recipie Not Found</h1>{error}</div>)
+          <h1 className="text-3xl font-bold">Recipe Not Found</h1>{error}</div>)
           : (recipes.map(meals => 
            // Recipe card component
           <RecipeCard
